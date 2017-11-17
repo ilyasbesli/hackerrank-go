@@ -32,9 +32,9 @@ func main() {
 	var appleDistances []int
 
 	for i := 0; i < m; i++ {
-		a, _ := strconv.Atoi(strings.TrimSpace(splitted[i]))
+		aaa, _ := strconv.Atoi(strings.TrimSpace(splitted[i]))
 
-		appleDistances = append(appleDistances, a)
+		appleDistances = append(appleDistances, aaa)
 	}
 
 	numberStr, _ = reader.ReadString('\n')

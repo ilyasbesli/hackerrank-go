@@ -26,6 +26,7 @@ Sample Input 0
 ---
 
 > 4
+> 
 > 3 2 1 3
 
 Sample Output 0

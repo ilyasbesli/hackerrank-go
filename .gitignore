@@ -15,6 +15,9 @@ data/
 background/debug.test
 background/tmp/
 tmp/
+*.iml
+.idea/
+
 
 # Created by https://www.gitignore.io/api/go,vim,linux,macos,emacs,windows,sublimetext,jetbrains+all,visualstudiocode
 

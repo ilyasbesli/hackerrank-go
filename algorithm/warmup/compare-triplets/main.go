@@ -6,6 +6,7 @@ import (
 	"os"
 	"strconv"
 	"strings"
+	"log"
 )
 
 func main() {
@@ -22,8 +23,8 @@ func main() {
 	bobScore := 0
 
 	for ind := range aliceNumber {
-		firstNo, _ := strconv.Atoi(strings.TrimSpace(aliceNumber[ind]))
-		secondNo, _ := strconv.Atoi(strings.TrimSpace(bobArrNumber[ind]))
+		firstNo := parseOrExit(aliceNumber[ind])
+		secondNo := parseOrExit(bobArrNumber[ind])
 
 		diff := firstNo - secondNo
 
@@ -36,4 +37,14 @@ func main() {
 	}
 
 	fmt.Printf("%d %d \n", aliceScore, bobScore)
+}
+
+func parseOrExit(str string) int {
+	no, err := strconv.Atoi(strings.TrimSpace(str))
+	if err != nil {
+		log.Printf("could not parse, %v", err)
+		os.Exit(1)
+	}
+
+	return no
 }

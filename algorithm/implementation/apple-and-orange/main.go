@@ -6,6 +6,7 @@ import (
 	"os"
 	"strconv"
 	"strings"
+	"log"
 )
 
 func main() {
@@ -14,18 +15,18 @@ func main() {
 
 	numberStr, _ := reader.ReadString('\n')
 	splitted := strings.Split(numberStr, " ")
-	s, _ := strconv.Atoi(strings.TrimSpace(splitted[0]))
-	t, _ := strconv.Atoi(strings.TrimSpace(splitted[1]))
+	s := parseOrExit(splitted[0])
+	t := parseOrExit(splitted[1])
 
 	numberStr, _ = reader.ReadString('\n')
 	splitted = strings.Split(numberStr, " ")
-	a, _ := strconv.Atoi(strings.TrimSpace(splitted[0]))
-	b, _ := strconv.Atoi(strings.TrimSpace(splitted[1]))
+	a := parseOrExit(splitted[0])
+	b := parseOrExit(splitted[1])
 
 	numberStr, _ = reader.ReadString('\n')
 	splitted = strings.Split(numberStr, " ")
-	m, _ := strconv.Atoi(strings.TrimSpace(splitted[0]))
-	n, _ := strconv.Atoi(strings.TrimSpace(splitted[1]))
+	m := parseOrExit(splitted[0])
+	n := parseOrExit(splitted[1])
 
 	numberStr, _ = reader.ReadString('\n')
 	splitted = strings.Split(numberStr, " ")
@@ -42,9 +43,9 @@ func main() {
 	var orangeDistances []int
 
 	for i := 0; i < n; i++ {
-		aaa, _ := strconv.Atoi(strings.TrimSpace(splitted[i]))
+		dist := parseOrExit(splitted[i])
 
-		orangeDistances = append(orangeDistances, aaa)
+		orangeDistances = append(orangeDistances, dist)
 	}
 
 	numberOfApple := 0
@@ -67,4 +68,14 @@ func main() {
 	}
 
 	fmt.Printf("%d\n%d\n", numberOfApple, numberOfOrange)
+}
+
+func parseOrExit(str string) int {
+	no, err := strconv.Atoi(strings.TrimSpace(str))
+	if err != nil {
+		log.Printf("could not parse, %v", err)
+		os.Exit(1)
+	}
+
+	return no
 }

@@ -6,6 +6,7 @@ import (
 	"os"
 	"strconv"
 	"strings"
+	"log"
 )
 
 func main() {
@@ -26,8 +27,10 @@ func main() {
 		if i > totalNumber {
 			break
 		}
-		no, _ := strconv.Atoi(strings.TrimSpace(str))
-
+		no, err := strconv.Atoi(strings.TrimSpace(str))
+		if err != nil {
+			log.Printf("coudl not parse, %v", err)
+		}
 		if no > max {
 			blowOut = 1
 			max = no

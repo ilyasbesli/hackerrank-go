@@ -17,7 +17,8 @@ background/tmp/
 tmp/
 *.iml
 .idea/
-
+main
+build/
 
 # Created by https://www.gitignore.io/api/go,vim,linux,macos,emacs,windows,sublimetext,jetbrains+all,visualstudiocode
 

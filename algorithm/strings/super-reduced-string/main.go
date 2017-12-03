@@ -21,7 +21,7 @@ func reduce(str []rune) []rune {
 		}
 
 		if count == 3 {
-			newRune := str[3:]
+			// newRune := str[3:]
 		}
 
 	}
@@ -40,7 +40,7 @@ func main() {
 	reducedStr := reduce(r)
 
 	if len(reducedStr) == 0 {
-		reducedStr = "Empty String"
+		// reducedStr = "Empty String"
 	}
 
 	fmt.Printf("%s\n", reducedStr)

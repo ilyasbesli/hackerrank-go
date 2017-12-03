@@ -1,12 +1,12 @@
 package main
 
 import (
-	"fmt"
-	"strings"
 	"bufio"
+	"fmt"
+	"log"
 	"os"
 	"strconv"
-	"log"
+	"strings"
 )
 
 func main() {
@@ -30,8 +30,8 @@ func main() {
 		fmt.Println("NO")
 	} else {
 		for i := 0; i < 10000; i++ {
-			n1 := start1 + step1 * i
-			n2 := start2 + step2 * i
+			n1 := start1 + step1*i
+			n2 := start2 + step2*i
 			if n1 == n2 {
 				fmt.Println("YES")
 				os.Exit(0)
@@ -42,7 +42,7 @@ func main() {
 	}
 }
 
-func parseOrExit(str string) int   {
+func parseOrExit(str string) int {
 	no, err := strconv.Atoi(strings.TrimSpace(str))
 	if err != nil {
 		log.Printf("could not parse, %v", err)
